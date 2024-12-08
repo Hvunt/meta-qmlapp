@@ -1,0 +1,12 @@
+[Unit]
+Description=Start user interface
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/myapp -platform eglfs
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
