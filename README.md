@@ -6,6 +6,14 @@ To build this with raspberry pi (tested on Raspberry Pi 4B) add the following co
 ```yocto
 DISTRO_FEATURES:remove = "X11 wayland"
 DISTRO_FEATURES:append = " opengl"
+
+INIT_MANAGER = "systemd"
+
+VIRTUAL-RUNTIME_init_manager = "systemd"
+VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
+
+DISTRO_FEATURES_BACKFILL:remove = "sysvinit"
+DISTRO_FEATURES:remove = "sysvinit"
 ```
 
 Into your core recipe (or `conf/local.conf`)
